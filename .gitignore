@@ -1,0 +1,14 @@
+# .gitignore for redessociales / wellness image agent
+output/pending/
+output/approved/
+output/published/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example

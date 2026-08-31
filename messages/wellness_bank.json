@@ -1,0 +1,163 @@
+{
+  "version": "1.0",
+  "description": "Bilingual wellness quote bank — English/Spanish paired messages for social media image generation.",
+  "categories": {
+    "mindfulness": [
+      {
+        "id": "mf-01",
+        "en": "Breathe. This moment is enough.",
+        "es": "Respira. Este momento es suficiente.",
+        "hashtags_en": ["#mindfulness", "#breathe", "#presentmoment"],
+        "hashtags_es": ["#mindfulness", "#respira", "#momentopresente"]
+      },
+      {
+        "id": "mf-02",
+        "en": "Peace begins with a single breath.",
+        "es": "La paz comienza con una sola respiración.",
+        "hashtags_en": ["#peace", "#mindfulness", "#calm"],
+        "hashtags_es": ["#paz", "#mindfulness", "#calma"]
+      },
+      {
+        "id": "mf-03",
+        "en": "You are not your thoughts. You are the space around them.",
+        "es": "No eres tus pensamientos. Eres el espacio que los rodea.",
+        "hashtags_en": ["#mindfulness", "#awareness", "#meditation"],
+        "hashtags_es": ["#mindfulness", "#consciencia", "#meditacion"]
+      },
+      {
+        "id": "mf-04",
+        "en": "Slow down. Nature does not hurry, yet everything is accomplished.",
+        "es": "Desacelera. La naturaleza no tiene prisa y todo se logra.",
+        "hashtags_en": ["#slowdown", "#nature", "#mindfulness"],
+        "hashtags_es": ["#desacelera", "#naturaleza", "#mindfulness"]
+      }
+    ],
+    "nutrition": [
+      {
+        "id": "nt-01",
+        "en": "Eat to nourish, not to punish.",
+        "es": "Come para nutrirte, no para castigarte.",
+        "hashtags_en": ["#nutrition", "#eatwell", "#wellness"],
+        "hashtags_es": ["#nutricion", "#comesano", "#bienestar"]
+      },
+      {
+        "id": "nt-02",
+        "en": "Every meal is a chance to fuel your best self.",
+        "es": "Cada comida es una oportunidad para nutrir tu mejor versión.",
+        "hashtags_en": ["#healthyeating", "#fuel", "#wellness"],
+        "hashtags_es": ["#alimentacionsana", "#energia", "#bienestar"]
+      },
+      {
+        "id": "nt-03",
+        "en": "Hydration is self-love in its simplest form.",
+        "es": "Hidratarte es amor propio en su forma más sencilla.",
+        "hashtags_en": ["#hydration", "#selfcare", "#drinkwater"],
+        "hashtags_es": ["#hidratacion", "#autocuidado", "#aguasalud"]
+      },
+      {
+        "id": "nt-04",
+        "en": "Color your plate. Color your life.",
+        "es": "Colorea tu plato. Colorea tu vida.",
+        "hashtags_en": ["#eattherainbow", "#nutrition", "#wellness"],
+        "hashtags_es": ["#comecolores", "#nutricion", "#bienestar"]
+      }
+    ],
+    "movement": [
+      {
+        "id": "mv-01",
+        "en": "Move your body. Clear your mind.",
+        "es": "Mueve tu cuerpo. Despeja tu mente.",
+        "hashtags_en": ["#movement", "#exercise", "#wellness"],
+        "hashtags_es": ["#movimiento", "#ejercicio", "#bienestar"]
+      },
+      {
+        "id": "mv-02",
+        "en": "Every step counts. Start where you are.",
+        "es": "Cada paso cuenta. Empieza donde estás.",
+        "hashtags_en": ["#movement", "#progress", "#fitness"],
+        "hashtags_es": ["#movimiento", "#progreso", "#fitness"]
+      },
+      {
+        "id": "mv-03",
+        "en": "Strength is built one rep, one day at a time.",
+        "es": "La fuerza se construye una repetición, un día a la vez.",
+        "hashtags_en": ["#strength", "#consistency", "#fitness"],
+        "hashtags_es": ["#fuerza", "#constancia", "#fitness"]
+      },
+      {
+        "id": "mv-04",
+        "en": "Your body is your most faithful companion. Take care of it.",
+        "es": "Tu cuerpo es tu compañero más fiel. Cuídalo.",
+        "hashtags_en": ["#bodycare", "#movement", "#selfcare"],
+        "hashtags_es": ["#cuerpossano", "#movimiento", "#autocuidado"]
+      }
+    ],
+    "sleep": [
+      {
+        "id": "sl-01",
+        "en": "Rest is not laziness. It is recovery.",
+        "es": "Descansar no es pereza. Es recuperación.",
+        "hashtags_en": ["#sleep", "#rest", "#recovery"],
+        "hashtags_es": ["#sueno", "#descanso", "#recuperacion"]
+      },
+      {
+        "id": "sl-02",
+        "en": "A good night's sleep is the foundation of a great tomorrow.",
+        "es": "Una buena noche de sueño es la base de un gran mañana.",
+        "hashtags_en": ["#sleep", "#wellness", "#goodnight"],
+        "hashtags_es": ["#sueno", "#bienestar", "#buenasnoches"]
+      },
+      {
+        "id": "sl-03",
+        "en": "Protect your sleep like you protect your dreams.",
+        "es": "Protege tu sueño como proteges tus sueños.",
+        "hashtags_en": ["#sleephealth", "#rest", "#wellness"],
+        "hashtags_es": ["#saluddelsueño", "#descanso", "#bienestar"]
+      },
+      {
+        "id": "sl-04",
+        "en": "Unplug. Unwind. Sleep.",
+        "es": "Desconéctate. Relájate. Duerme.",
+        "hashtags_en": ["#digitaldetox", "#sleep", "#relax"],
+        "hashtags_es": ["#desconectate", "#sueno", "#relax"]
+      }
+    ],
+    "mental_health": [
+      {
+        "id": "mh-01",
+        "en": "It's okay to not be okay. Ask for help.",
+        "es": "Está bien no estar bien. Pide ayuda.",
+        "hashtags_en": ["#mentalhealth", "#itsokay", "#seekhelp"],
+        "hashtags_es": ["#saludmental", "#estadebien", "#pideayuda"]
+      },
+      {
+        "id": "mh-02",
+        "en": "You are worthy of care — especially from yourself.",
+        "es": "Mereces cuidado — especialmente de ti mismo/a.",
+        "hashtags_en": ["#selfworth", "#mentalhealth", "#selfcare"],
+        "hashtags_es": ["#valorpropio", "#saludmental", "#autocuidado"]
+      },
+      {
+        "id": "mh-03",
+        "en": "Progress, not perfection. Every day is a new chance.",
+        "es": "Progreso, no perfección. Cada día es una nueva oportunidad.",
+        "hashtags_en": ["#progress", "#mentalhealth", "#growth"],
+        "hashtags_es": ["#progreso", "#saludmental", "#crecimiento"]
+      },
+      {
+        "id": "mh-04",
+        "en": "Boundaries are an act of self-respect.",
+        "es": "Los límites son un acto de respeto propio.",
+        "hashtags_en": ["#boundaries", "#selfrespect", "#mentalhealth"],
+        "hashtags_es": ["#limites", "#respetopropio", "#saludmental"]
+      },
+      {
+        "id": "mh-05",
+        "en": "Healing is not linear. Be patient with yourself.",
+        "es": "La sanación no es lineal. Ten paciencia contigo mismo/a.",
+        "hashtags_en": ["#healing", "#patience", "#mentalhealth"],
+        "hashtags_es": ["#sanacion", "#paciencia", "#saludmental"]
+      }
+    ]
+  }
+}

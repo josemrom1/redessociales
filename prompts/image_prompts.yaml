@@ -1,0 +1,121 @@
+# Ideogram Image Prompt Templates
+# Wellness Social-Media Agent — Bilingual 9:16 Vertical Quote Images
+#
+# Usage:
+#   Replace {{EN_QUOTE}}, {{ES_QUOTE}}, {{CATEGORY}}, {{PALETTE}} with values
+#   from wellness_bank.json before sending to the Ideogram API.
+#
+# Aspect ratio: 9:16 (portrait, 1080×1920 px)
+# Model: ideogram-v2 (recommended) or ideogram-v3-turbo (faster)
+
+defaults:
+  aspect_ratio: "9:16"
+  model: "V_2"           # Ideogram model identifier
+  style_type: "DESIGN"   # best for text-overlay graphics
+  magic_prompt: "OFF"    # keep exact text; don't let AI rephrase
+
+# ---------------------------------------------------------------------------
+# TEMPLATE A — Centered Minimalist (light/clean)
+# Best for: mindfulness, mental_health, sleep
+# ---------------------------------------------------------------------------
+template_a_en:
+  name: "Centered Minimalist — English"
+  prompt: >
+    Vertical 9:16 social-media wellness quote card, minimalist design,
+    soft gradient background in {{PALETTE}} tones, generous white space,
+    large elegant sans-serif typography centered on canvas,
+    English quote in white or dark ink: "{{EN_QUOTE}}",
+    small brand handle @wellness at bottom center,
+    no people, no clutter, calming and premium feel,
+    photorealistic digital art, ultra high resolution
+
+template_a_es:
+  name: "Centered Minimalist — Spanish"
+  prompt: >
+    Tarjeta vertical 9:16 para redes sociales, diseño minimalista bilingüe,
+    fondo con degradado suave en tonos {{PALETTE}}, espacio en blanco generoso,
+    tipografía sans-serif grande y elegante centrada en el lienzo,
+    cita en español en tinta blanca o oscura: "{{ES_QUOTE}}",
+    pequeño handle de marca @wellness en la parte inferior,
+    sin personas, limpio y premium,
+    arte digital fotorealista, ultra alta resolución
+
+# ---------------------------------------------------------------------------
+# TEMPLATE B — Bold Accent (vibrant, energetic)
+# Best for: movement, nutrition
+# ---------------------------------------------------------------------------
+template_b_en:
+  name: "Bold Accent — English"
+  prompt: >
+    Vertical 9:16 Instagram Story wellness quote card, bold modern design,
+    solid {{PALETTE}} background with a geometric accent shape (circle or arc)
+    in a contrasting warm tone, large bold sans-serif English quote
+    in white: "{{EN_QUOTE}}",
+    thin decorative line above and below text, category label "{{CATEGORY}}"
+    in small caps at the top, @wellness handle at bottom,
+    energetic and motivational, digital graphic design, 4K
+
+template_b_es:
+  name: "Bold Accent — Spanish"
+  prompt: >
+    Tarjeta vertical 9:16 para Instagram Story, diseño moderno y atrevido,
+    fondo sólido {{PALETTE}} con forma geométrica de acento (círculo o arco)
+    en tono cálido contrastante, cita en español en negrita sans-serif
+    en blanco: "{{ES_QUOTE}}",
+    línea decorativa fina sobre y bajo el texto, etiqueta "{{CATEGORY}}" en
+    versalitas en la parte superior, @wellness al pie,
+    energético y motivacional, diseño gráfico digital, 4K
+
+# ---------------------------------------------------------------------------
+# TEMPLATE C — Nature / Organic
+# Best for: nutrition, sleep, mindfulness
+# ---------------------------------------------------------------------------
+template_c_en:
+  name: "Nature Organic — English"
+  prompt: >
+    Vertical 9:16 wellness quote card with a soft blurred nature photography
+    background ({{NATURE_SCENE}}), dark semi-transparent overlay for legibility,
+    elegant serif or handwritten English quote centered:
+    "{{EN_QUOTE}}",
+    subtle botanical illustration elements (leaves, botanicals) in corners,
+    @wellness branding at bottom, warm and grounded aesthetic,
+    high-end magazine feel, ultra-sharp, 4K
+
+template_c_es:
+  name: "Nature Organic — Spanish"
+  prompt: >
+    Tarjeta vertical 9:16 con fondo fotográfico suave de naturaleza
+    ({{NATURE_SCENE}}), capa oscura semi-transparente para legibilidad,
+    cita en español en tipografía serif o manuscrita centrada:
+    "{{ES_QUOTE}}",
+    elementos botánicos ilustrados sutiles (hojas, flora) en las esquinas,
+    branding @wellness al pie, estética cálida y arraigada,
+    estilo de revista premium, ultra nítido, 4K
+
+# ---------------------------------------------------------------------------
+# Palette options (substitute into {{PALETTE}})
+# ---------------------------------------------------------------------------
+palettes:
+  mindfulness:   "soft lavender and sage green"
+  nutrition:     "warm terracotta and cream"
+  movement:      "electric blue and deep navy"
+  sleep:         "deep indigo and midnight blue"
+  mental_health: "gentle rose and warm ivory"
+
+# ---------------------------------------------------------------------------
+# Nature scene options (substitute into {{NATURE_SCENE}})
+# ---------------------------------------------------------------------------
+nature_scenes:
+  mindfulness:   "misty mountain forest at dawn"
+  nutrition:     "sunlit farmers market produce, close-up"
+  movement:      "open trail through green hills at sunrise"
+  sleep:         "starry night sky over a calm lake"
+  mental_health: "gentle ocean waves on a quiet beach"
+
+# ---------------------------------------------------------------------------
+# Negative prompt (applied to all templates)
+# ---------------------------------------------------------------------------
+negative_prompt: >
+  text errors, misspelled words, blurry text, low resolution, watermark,
+  stock photo watermark, people's faces, cluttered layout, neon colors,
+  cartoon style, childish, violent, political content
