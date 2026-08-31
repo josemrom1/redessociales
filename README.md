@@ -80,3 +80,33 @@ Generate → output/pending/ → Approve (docs/approval_rules.md) → output/app
 
 Get your free Ideogram API key at <https://ideogram.ai/manage-api>.
 Free tier: 25 generations/month. Paid: $7/mo for 400.
+
+---
+
+## ⚠️ Initial Setup: Opening the Pull Request
+
+This project lives on branch `josemrom1-wellness-image-agent`.
+Because the `main` branch was empty when this branch was pushed, GitHub cannot
+create a pull request yet (it requires at least one commit on the base branch).
+
+**One-time fix — run this from your local clone of the repo:**
+
+```bash
+# 1. Switch to main and create an empty initial commit
+git checkout main
+git commit --allow-empty -m "chore: initial commit"
+git push origin main
+
+# 2. Open the pull request (GitHub CLI)
+gh pr create \
+  --repo josemrom1/redessociales \
+  --head josemrom1-wellness-image-agent \
+  --base main \
+  --title "feat: Wellness social-media image agent (bilingual EN/ES, Ideogram 9:16)" \
+  --body "See README.md for full details."
+```
+
+Or open it via the GitHub web UI:
+1. Go to <https://github.com/josemrom1/redessociales>
+2. Click **Compare & pull request** next to `josemrom1-wellness-image-agent`
+3. Set base branch to `main` and submit.
