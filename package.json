@@ -1,0 +1,14 @@
+{
+  "name": "redessociales-social-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitHub Actions social posting pipeline with Gemini generation and Buffer publish adapter.",
+  "scripts": {
+    "social:run": "node scripts/social-pipeline.js",
+    "social:dry-run": "node scripts/social-pipeline.js --dry-run",
+    "social:test": "node scripts/social-pipeline.js --dry-run --platform buffer --prompt-key daily-default"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

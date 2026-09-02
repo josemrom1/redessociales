@@ -1,0 +1,10 @@
+{
+  "daily-default": {
+    "description": "Default daily post prompt",
+    "template": "Write one engaging social media post about {{topic}} in under {{maxLength}} characters. Use clear language, one call to action, and no hashtags unless they are essential."
+  },
+  "launch-announcement": {
+    "description": "Product or feature launch style",
+    "template": "Write a concise launch announcement post about {{topic}} under {{maxLength}} characters. Keep it confident, specific, and action-oriented."
+  }
+}
