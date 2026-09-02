@@ -7,12 +7,16 @@ This repository includes a complete GitHub Actions pipeline that generates socia
 Set these in **Repository Settings → Secrets and variables → Actions**:
 
 1. `GEMINI_API_KEY`
-2. `BUFFER_ACCESS_TOKEN`
-3. `BUFFER_PROFILE_ID`
+2. `BUFFER_API_KEY`
+3. `BUFFER_CHANNEL_ID`
 
 Optional repository variable:
 
 1. `GEMINI_MODEL` (default: `gemini-1.5-flash`)
+
+Create `BUFFER_API_KEY` in [Buffer Settings > API](https://publish.buffer.com/settings/api). To get
+`BUFFER_CHANNEL_ID`, install the Buffer CLI and run `buffer channels list`; copy the ID of the channel
+where posts should be queued. The GitHub Actions workflow installs the CLI automatically.
 
 ## Workflow
 
@@ -31,12 +35,17 @@ Triggers:
 
 ```powershell
 $env:GEMINI_API_KEY="your-key"
-$env:BUFFER_ACCESS_TOKEN="your-buffer-token"
-$env:BUFFER_PROFILE_ID="your-buffer-profile-id"
+$env:BUFFER_API_KEY="your-buffer-api-key"
+$env:BUFFER_CHANNEL_ID="your-buffer-channel-id"
+npm install --global @bufferapp/cli
 node scripts/social-pipeline.js --dry-run --platform buffer --prompt-key daily-default --topic "AI productivity"
 ```
 
 Output artifacts are written to `output/` as JSON logs.
+
+The pipeline uses `buffer posts create` with automatic scheduling and `addToQueue` mode. For local
+setup, `buffer init` can save your Buffer API key in the CLI's global configuration; CI uses the
+`BUFFER_API_KEY` environment variable from GitHub Actions secrets instead.
 
 ## Safe testing (recommended)
 
