@@ -2,6 +2,7 @@
 
 const fs = require("node:fs");
 const path = require("node:path");
+const { spawnSync } = require("node:child_process");
 
 const REPO_ROOT = process.cwd();
 const CONFIG_DIR = path.join(REPO_ROOT, "config");
@@ -94,33 +95,33 @@ async function callGemini({ apiKey, model, prompt }) {
 }
 
 async function publishViaBuffer({ text, dryRun }) {
-  const accessToken = requiredEnv("BUFFER_ACCESS_TOKEN");
-  const profileId = requiredEnv("BUFFER_PROFILE_ID");
-  if (dryRun) {
-    return { status: "dry-run", provider: "buffer", textLength: text.length };
+  const channelId = requiredEnv("BUFFER_CHANNEL_ID");
+  if (!dryRun) requiredEnv("BUFFER_API_KEY");
+
+  const input = {
+    channelId,
+    schedulingType: "automatic",
+    mode: "addToQueue",
+    text,
+  };
+  const command = process.platform === "win32" ? "buffer.cmd" : "buffer";
+  const result = spawnSync(command, ["posts", "create", "--json", JSON.stringify(input), ...(dryRun ? ["--dry-run"] : [])], {
+    encoding: "utf8",
+  });
+
+  if (result.error) {
+    throw new Error(`Failed to run Buffer CLI: ${result.error.message}`);
+  }
+  if (result.status !== 0) {
+    throw new Error(`Buffer CLI publish failed: ${(result.stderr || result.stdout).trim()}`);
   }
 
-  const response = await fetch("https://api.bufferapp.com/1/updates/create.json", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${accessToken}` },
-    body: JSON.stringify({
-      profile_ids: [profileId],
-      text,
-      now: false,
-      shorten: true,
-    }),
-  });
-  const bodyText = await response.text();
-  if (!response.ok) {
-    throw new Error(`Buffer publish failed (${response.status}): ${bodyText}`);
-  }
-  let payload;
+  const output = result.stdout.trim();
   try {
-    payload = JSON.parse(bodyText);
-  } catch {
-    payload = { raw: bodyText };
+    return { status: dryRun ? "dry-run" : "published", provider: "buffer", result: JSON.parse(output) };
+  } catch (error) {
+    throw new Error(`Buffer CLI returned invalid JSON: ${error.message}`);
   }
-  return { status: "published", provider: "buffer", payload };
 }
 
 function getPublisherAdapter(platform) {
