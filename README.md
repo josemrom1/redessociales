@@ -30,6 +30,7 @@ Triggers:
    - `platform` (currently `buffer`)
    - `prompt_key` (from `config/prompts.json`)
    - `topic` (optional override)
+   - `post_text` (optional approved caption)
 
 ## Local run
 
@@ -38,6 +39,7 @@ $env:GEMINI_API_KEY="your-key"
 $env:BUFFER_API_KEY="your-buffer-api-key"
 $env:BUFFER_CHANNEL_ID="your-buffer-channel-id"
 npm install --global @bufferapp/cli
+pip install -r scripts/requirements.txt
 node scripts/social-pipeline.js --dry-run --platform buffer --prompt-key daily-default --topic "AI productivity"
 ```
 
@@ -46,6 +48,17 @@ Output artifacts are written to `output/` as JSON logs.
 The pipeline uses `buffer posts create` with automatic scheduling and `addToQueue` mode. For local
 setup, `buffer init` can save your Buffer API key in the CLI's global configuration; CI uses the
 `BUFFER_API_KEY` environment variable from GitHub Actions secrets instead.
+
+## Instagram image generation
+
+For non-dry-run manual workflow dispatches, GitHub Actions generates a wellness image with Gemini
+and commits it to `generated_images/`. The committed image gives Buffer the required public HTTPS
+asset URL, then the workflow queues the image and caption to `BUFFER_CHANNEL_ID`.
+
+Use the optional `post_text` workflow input to supply an approved caption. Otherwise,
+`scripts/imagenes_generator.py` generates the caption before creating its matching image. The
+workflow needs `GEMINI_API_KEY`, `BUFFER_API_KEY`, and `BUFFER_CHANNEL_ID` repository secrets.
+The repository must be public so Buffer can retrieve each generated image from its raw GitHub URL.
 
 ## Safe testing (recommended)
 
