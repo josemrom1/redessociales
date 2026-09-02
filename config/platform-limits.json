@@ -1,0 +1,11 @@
+{
+  "buffer": {
+    "maxLength": 260
+  },
+  "x": {
+    "maxLength": 280
+  },
+  "linkedin": {
+    "maxLength": 3000
+  }
+}
